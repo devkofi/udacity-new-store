@@ -1,0 +1,16 @@
+
+<div>
+    <div class="uk-card uk-card-hover">
+        <div class="uk-card-media-top">
+            <img src="{{product.url}}" width="1800" height="80" alt="">
+        </div>
+        <div class="uk-card-body">
+            <h3 class="uk-card-title">{{product.name}}</h3>
+            <p>{{product.description}}</p>
+        </div>
+
+        <div class="uk-card-footer">
+            <a href="#" class="uk-button uk-button-primary" (click)="addToCart.emit(product)">Add to Cart</a>
+        </div>
+    </div>
+</div>
