@@ -88,7 +88,7 @@ Eg. If you want to hide a post
 
 //function to emit event to parent
 emit_event():void{
-    this.hidePost.emit(name>)
+    this.hidePost.emit(<name>)
 }
 -----------------IN THE CHILD COMPONENT CLASS-----------------
 
