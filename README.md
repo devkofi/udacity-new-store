@@ -1,27 +1,116 @@
-# UdacityNewStore
+# UDACITY MY STORE
 
-This project is an ecommerce app that demonstrates my ability to use Angular in developing for the frontend
+---
+## PROJECT OVERVIEW
 
-## Development server
+This repo contains a basic E-commerce application that was built with the angular framework. The basic features of the application includes:
+* Add product to the cart
+* Remove specific items you don't want from the cart
+* Notify the user upon successful completion of order
+<br/><br/>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+---
 
-## Code scaffolding
+## PROJECT SETUP
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+To get started, clone this repo and run `npm install` in your terminal at the project root.
+<br/><br/>
 
-## Build
+---
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## PROJECT TASKS
 
-## Running unit tests
+The main goal is to build an API for a shopping application. In this project you will:
+* Scaffold your project
+* Generate the product list component
+* Begin building the component logic and template
+* Consider the hierarchy of components
+* Create the TypeScript model
+* Generate the service(s)
+* Fetch data
+* Generate and create other components
+* Create routing
+* Ensure that inputs are validated
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+# REQUIRED TECHNOLOGIES
+Your application must make use of the following third-party libraries:
+- UIKIT
 
-## Running end-to-end tests
+Find [project rubric, here](https://review.udacity.com/#!/rubrics/3069/view).
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+**The final implementation of the project showcases my abilities to use the Angular framework for an online store.**
+<br/><br/>
 
-## Further help
+---
+## FOLDERS AND FILES
+* angular :  `angular`
+* src : `src`
+* package : `package.json`
+* tsconfig : `tsconfig.json`
+<br/><br/>
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+---
+## INSTALL NODE PACKAGES
+
+### _Install Dependencies_. 
+<br/>
+
+```bash
+npm install
+```
+<br/>
+
+---
+
+
+
+![](<https://github.com/devkofi/udacity-store-front/blob/master/schema.png>)
+
+
+---
+## START PROJECT
+
+### _Build_:  
+```bash
+npm run build
+```
+
+### _Start Application_:  
+```bash
+npm run start
+```
+
+### _Watch_:  
+```bash
+npm run watch
+```
+
+
+Start server at http://localhost:4200
+
+<br/>
+
+---
+
+
+# TESTING
+
+### _Jasmine_:  
+```bash
+npm install -g jasmine
+npm run test
+```
+<br/>
+
+---
+
+
+#### _Production_:  
+```bash
+ENV=dev
+```
+#### _Test_:  
+```bash
+ENV=test
+```
+<br/><br/>
