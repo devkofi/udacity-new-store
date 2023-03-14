@@ -1,6 +1,6 @@
 # UdacityNewStore
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.2.
+This project is an ecommerce app that demonstrates my ability to use Angular in developing for the frontend
 
 ## Development server
 
