@@ -1,0 +1,18 @@
+
+<div class="uk-child-width-1-6@m" uk-grid>
+    <div>
+        <div class="uk-card uk-card-hover uk-position-center">
+            <div class="uk-card-media-top">
+                <img src="{{product.url}}" width="350" height="30" alt="">
+            </div>
+            <div class="uk-card-body">
+                <h3 class="uk-card-title">{{product.name}}</h3>
+                <p>{{product.description}}</p>
+            </div>
+    
+            <div class="uk-card-footer">
+                <a routerLink="/" class="uk-button uk-button-primary" (click)="addToCart.emit(product)">Back</a>
+            </div>
+        </div>
+    </div>
+</div>
