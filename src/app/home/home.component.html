@@ -1,0 +1,6 @@
+<div class="uk-child-width-1-5@m" uk-grid>
+    <app-product-display *ngFor="let product of products" [product]="product" (addToCart)="addCart(product)" (addCurrentProduct)="addCurrentProduct(product)" ></app-product-display>
+</div>
+
+
+<!-- (addToCart)="addCart(product)" -->
