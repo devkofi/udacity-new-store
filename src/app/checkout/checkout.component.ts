@@ -10,6 +10,7 @@ export class CheckoutComponent implements OnInit{
   cartTotal:number = 0;
   fullName: string = '';
   phoneNumber: string = '';
+  payment: string = '';
   address: string = '';
   public: boolean = false;
   totalPrice: number = 0;

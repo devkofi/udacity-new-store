@@ -17,4 +17,11 @@ export class CartlistComponent implements OnInit{
   ngOnInit(): void {
     this.carts = this.cartService.getCart()
   }
+
+  remove(product: Product):void{
+    const index = this.carts.indexOf(product, 0);
+    if (index > -1) {
+      this.carts.splice(index, 1);
+    }
+  }
 }
