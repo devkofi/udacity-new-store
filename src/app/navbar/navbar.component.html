@@ -3,15 +3,17 @@
         <div uk-navbar>
 
             <div class="uk-navbar-left">
-                <a class="uk-navbar-item uk-logo" href="#" aria-label="Back to Home">MY STORE <span class="uk-badge">{{countCart}}</span></a>
+                <a routerLink="cartlist" class="uk-navbar-item uk-logo" aria-label="Back to Home">MY STORE <span class="uk-badge">{{countCart}}</span></a>
 
             </div>
             
             <div class="uk-navbar-right">
 
                 <ul class="uk-navbar-nav">
-                    <li class="uk-active"><a href="#">LOGIN</a></li>
-                    <li><a href="#">SIGN UP</a></li>
+                    <!-- <li class="uk-active"><a href="#">LOGIN</a></li>
+                    <li><a href="#">SIGN UP</a></li> -->
+                    <li><a routerLink="/">Home</a></li>
+                    <li><a routerLink="/checkout">Checkout</a></li>
                 </ul>
 
             </div>

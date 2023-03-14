@@ -1,1 +1,24 @@
-<p>cartlist works!</p>
+
+<div class="uk-container">
+    <div *ngFor="let cart of carts" class="uk-panel uk-card uk-card-hover uk-margin-medium-top uk-width-1-2">
+        <img class="uk-align-center uk-align-left@m " src="{{cart.url}}" width="150" height="50" alt="Example image">
+        <h2>{{cart.name}}</h2>
+        <p>{{cart.description}}</p>
+    </div>
+</div>
+
+<!-- <div class="uk-flex uk-flex-row uk-container">
+    <div class="uk-flex uk-flex-center">
+        <div class="uk-flex uk-flex-column">
+            <div *ngFor="let cart of carts" class="uk-panel uk-card uk-card-hover uk-margin-medium-top uk-width-1-1">
+                <img class="uk-align-center uk-align-left@m " src="{{cart.url}}" width="150" height="50" alt="Example image">
+                <h2>{{cart.name}}</h2>
+                <p>{{cart.description}}</p>
+            </div>
+        </div>
+        <div class="uk-card uk-card-default uk-card-body uk-margin-left">Item 2</div>
+    </div>
+</div> -->
+
+
+

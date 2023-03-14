@@ -1,1 +1,113 @@
-<p>checkout works!</p>
+<div class="uk-container uk-margin-left" uk-grid>
+    <div class="uk-width-1-1@m uk-card uk-padding">
+        <form #form="ngForm" (ngSubmit)="onSubmit()" class="uk-form-stacked">
+            <fieldset class="uk-fieldset">
+        
+                <legend class="uk-legend">CHECKOUT</legend>
+        
+                <div class="uk-margin">
+                    <label class="uk-form-label" for="fullName">Full Name</label>
+                    <input 
+                    id="fullName"
+                    name="fullName"
+                    required 
+                    minlength="6" 
+                    [(ngModel)]="fullName"
+                    #individualFullName="ngModel" 
+                    class="uk-input" type="text" 
+                    placeholder="Full Name" 
+                    aria-label="Input">
+                </div>
+
+                <div class="uk-margin">
+                    <label class="uk-form-label" for="fullName">Phone Number</label>
+                    <input 
+                    name="phoneNumber"
+                    id="phoneNumber"
+                    required 
+                    minlength="6" 
+                    [(ngModel)]="phoneNumber"
+                    #individualPhoneNumber="ngModel" 
+                    class="uk-input" type="text" 
+                    placeholder="Phone Number" 
+                    aria-label="Input">
+                </div>
+
+                <div class="uk-margin">
+                    <label class="uk-form-label" for="address">Full Name</label>
+                    <input 
+                    name="address"
+                    id="address"
+                    required 
+                    minlength="6" 
+                    [(ngModel)]="address"
+                    #individualAddress="ngModel" 
+                    class="uk-input" type="text" 
+                    placeholder="Address" 
+                    aria-label="Input">
+                </div>
+
+                <div class="uk-width-1-4@s">
+                    <label class="uk-form-label" for="items">Items</label>
+                    <input id="items" name="items" [(ngModel)]="cartTotal" class="uk-input" type="text" placeholder="{{cartTotal | number}}" disabled>
+                </div>
+
+                <div class="uk-width-1-4@s">
+                    <label class="uk-form-label" for="price">Total Price</label>
+                    <input id="price" name="totalPrice" [(ngModel)]="totalPrice" class="uk-input" type="text" placeholder="{{totalPrice | currency}}" disabled>
+                </div>
+
+                <div class="uk-margin">
+                    <button [disabled]="form.invalid || cartTotal < 1" class="uk-button uk-button-primary" uk-toggle="target: #modal-close-default" type="submit">Order</button>
+                </div>
+
+                <div *ngIf="individualFullName.invalid && individualFullName.dirty">
+                    <div *ngIf="individualFullName.errors?.['required']">
+                      Please provide your Full Name.
+                    </div>
+                    <div *ngIf="individualFullName.errors?.['minlength']">
+                      Full Name should contain at least 6 characters.
+                    </div>
+                </div>
+
+                <div *ngIf="individualPhoneNumber.invalid && individualPhoneNumber.dirty">
+                    <div *ngIf="individualPhoneNumber.errors?.['required']">
+                      Please provide your Phone Number.
+                    </div>
+                    <div *ngIf="individualPhoneNumber.errors?.['minlength']">
+                      Phone Number should contain at least 6 characters.
+                    </div>
+                </div>
+
+                <div *ngIf="individualAddress.invalid && individualAddress.dirty">
+                    <div *ngIf="individualAddress.errors?.['required']">
+                      Please provide your Address.
+                    </div>
+                    <div *ngIf="individualAddress.errors?.['minlength']">
+                      Address should contain at least 6 characters.
+                    </div>
+                </div>
+
+                <div *ngIf="cartTotal <=0">
+                   Cart is empty.
+                </div>
+                
+                        
+        
+            </fieldset>
+        </form>
+        
+    </div>
+</div>
+
+<!-- This is a button toggling the modal with the default close button
+<button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #modal-close-default">Default</button> -->
+
+<!-- This is the modal with the default close button -->
+<div id="modal-close-default" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <h2 class="uk-modal-title">Success</h2>
+        <p>Order Successful</p>
+    </div>
+</div>

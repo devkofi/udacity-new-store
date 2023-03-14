@@ -5,12 +5,13 @@
             <img src="{{product.url}}" width="1800" height="80" alt="">
         </div>
         <div class="uk-card-body">
-            <h3 class="uk-card-title">{{product.name}}</h3>
+            <h3 class="uk-card-title">${{product.price}}</h3>
             <p>{{product.description}}</p>
         </div>
 
         <div class="uk-card-footer">
             <a href="#" class="uk-button uk-button-primary" (click)="addToCart.emit(product)">Add to Cart</a>
+            <a routerLink="details/{{ product.id }}" class="uk-margin-medium-left uk-button uk-button-text" (click)="addCurrentProduct.emit(product)">Read More</a>
         </div>
     </div>
 </div>

@@ -594,7 +594,7 @@ For a full list of validators, check out Validators in the Angular documentation
 
 
 
-<form (ngSubmit)="onSubmit()">
+<form #form="ngForm" (ngSubmit)="onSubmit()">
   <label>Blog title</label>
   <input 
     type="text" 

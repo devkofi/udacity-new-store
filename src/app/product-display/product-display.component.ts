@@ -11,6 +11,8 @@ export class ProductDisplayComponent implements OnInit{
 
   @Output() addToCart = new EventEmitter();
 
+  @Output()addCurrentProduct = new EventEmitter()
+
   contructor(){
 
   }

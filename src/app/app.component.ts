@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CartCountService } from './cart-count.service';
 import { FetchDataService } from './fetch-data.service';
 import { Product } from './types';
 
@@ -9,24 +10,17 @@ import { Product } from './types';
 })
 export class AppComponent implements OnInit{
   title = 'udacity-new-store';
-  products:Product[]=[];
-  cart:Product[]=[];
-
-  constructor(private fetchData: FetchDataService){
+  constructor(private cartCount: CartCountService){
 
   }
 
   ngOnInit(): void {
-    this.fetchData.getData()
-      .subscribe(res => this.products = res);
-  }
-
-  addCart(product: Product):void{
-    this.cart.push(product);
+    
   }
 
   countItems():number{
-    return this.cart.length;
+    return this.cartCount.getCartCount();
   }
+
   
 }
