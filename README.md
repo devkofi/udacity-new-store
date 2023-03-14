@@ -97,7 +97,6 @@ Start server at http://localhost:4200
 
 ### _Jasmine_:  
 ```bash
-npm install -g jasmine
 npm run test
 ```
 <br/>
