@@ -49,7 +49,7 @@
 
                 <div class="uk-width-1-4@s">
                     <label class="uk-form-label" for="items">Items</label>
-                    <input id="items" name="items" [(ngModel)]="cartTotal" class="uk-input" type="text" placeholder="{{cartTotal | number}}" disabled>
+                    <input id="items" name="items" [(ngModel)]="cartTotal" class="uk-input" type="number" placeholder="{{cartTotal | number}}" (ngModelChange)="onChange($event)">
                 </div>
 
                 <div class="uk-width-1-4@s">
@@ -105,8 +105,10 @@
                 <div *ngIf="cartTotal <=0">
                    Cart is empty.
                 </div>
-                
-                        
+
+                <div *ngIf="changing">
+                    Cart is now {{cartTotal}} items
+                 </div>                     
         
             </fieldset>
         </form>

@@ -12,7 +12,7 @@ export class CheckoutComponent implements OnInit{
   phoneNumber: string = '';
   payment: string = '';
   address: string = '';
-  public: boolean = false;
+  changing: boolean = false;
   totalPrice: number = 0;
 
   
@@ -29,6 +29,11 @@ export class CheckoutComponent implements OnInit{
 
   onSubmit():void{
     this.cartCount.resetCartCount();
+  }
+
+  onChange(event: Event){
+    console.log(event);
+    this.changing = true;
   }
 
 
