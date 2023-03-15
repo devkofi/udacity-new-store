@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { GetCurrentProductService } from '../get-current-product.service';
-import { Product } from '../types';
+import { GetCurrentProductService } from '../services/get-current-product.service';
+import { Product } from '../types/types';
 
 @Component({
   selector: 'app-product-detail',

@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { CartCountService } from '../cart-count.service';
-import { ShowalertService } from '../showalert.service';
-import { Product } from '../types';
+import { CartCountService } from '../services/cart-count.service';
+import { ShowalertService } from '../services/showalert.service';
+import { Product } from '../types/types';
 
 @Component({
   selector: 'app-cartlist',

@@ -1,8 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { CartCountService } from '../cart-count.service';
-import { FetchDataService } from '../fetch-data.service';
-import { GetCurrentProductService } from '../get-current-product.service';
-import { Product } from '../types';
+import { CartCountService } from '../services/cart-count.service';
+import { FetchDataService } from '../services/fetch-data.service';
+import { GetCurrentProductService } from '../services/get-current-product.service';
+import { Product } from '../types/types';
 
 @Component({
   selector: 'app-home',

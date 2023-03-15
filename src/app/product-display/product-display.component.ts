@@ -1,6 +1,6 @@
 import { Component, Input, Output, OnInit, EventEmitter  } from '@angular/core';
-import { ShowalertService } from '../showalert.service';
-import { Product } from '../types';
+import { ShowalertService } from '../services/showalert.service';
+import { Product } from '../types/types';
 
 @Component({
   selector: 'app-product-display',

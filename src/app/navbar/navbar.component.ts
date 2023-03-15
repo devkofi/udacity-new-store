@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ShowalertService } from '../showalert.service';
+import { ShowalertService } from '../services/showalert.service';
 
 @Component({
   selector: 'app-navbar',

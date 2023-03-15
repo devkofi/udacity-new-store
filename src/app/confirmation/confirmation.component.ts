@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CartCountService } from '../cart-count.service';
-import { ShowalertService } from '../showalert.service';
+import { CartCountService } from '../services/cart-count.service';
+import { ShowalertService } from '../services/showalert.service';
 
 @Component({
   selector: 'app-confirmation',

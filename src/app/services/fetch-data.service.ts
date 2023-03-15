@@ -1,5 +1,5 @@
 import { Injectable, OnInit } from '@angular/core';
-import { Product } from './types';
+import { Product } from '../types/types';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 @Injectable({

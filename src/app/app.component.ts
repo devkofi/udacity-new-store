@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { CartCountService } from './cart-count.service';
-import { FetchDataService } from './fetch-data.service';
-import { Product } from './types';
+import { CartCountService } from './services/cart-count.service';
+import { FetchDataService } from './services/fetch-data.service';
+import { Product } from './types/types';
 
 @Component({
   selector: 'app-root',

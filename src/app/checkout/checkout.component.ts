@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { CartCountService } from '../cart-count.service';
+import { CartCountService } from '../services/cart-count.service';
 
 @Component({
   selector: 'app-checkout',
