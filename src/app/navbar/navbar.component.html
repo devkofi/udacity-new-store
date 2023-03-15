@@ -3,7 +3,11 @@
         <div uk-navbar>
 
             <div class="uk-navbar-left">
-                <a routerLink="cartlist" class="uk-navbar-item uk-logo" aria-label="Back to Home">MY STORE <span class="uk-badge">{{countCart}}</span></a>
+                <a routerLink="cartlist" class="uk-navbar-item uk-logo" aria-label="Back to Home">
+                    MY STORE 
+                    <span class="uk-badge">{{countCart}}</span>
+                    <span class="uk-badge">${{getTotalCost()}}</span>
+                </a>
 
             </div>
             

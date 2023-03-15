@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { CartCountService } from '../services/cart-count.service';
 import { ShowalertService } from '../services/showalert.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { ShowalertService } from '../services/showalert.service';
 export class NavbarComponent implements OnInit{
   @Input() countCart: number = 0;
   
-  constructor(private alertService: ShowalertService){
+  constructor(private alertService: ShowalertService, private cartService: CartCountService){
 
   }
 
@@ -31,5 +32,9 @@ export class NavbarComponent implements OnInit{
 
   resetDeleteAlert(){
     this.alertService.hideDeleteAlert()
+  }
+
+  getTotalCost():string{
+    return (this.cartService.totalCost()).toFixed(2)
   }
 }

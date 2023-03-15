@@ -26,4 +26,14 @@ export class CartCountService {
     this.cart = [];
   }
 
+  totalCost():number{
+    let cost = 0;
+
+    this.cart.forEach((item)=>{
+      cost += item.price;
+    })
+
+    return cost;
+  }
+
 }

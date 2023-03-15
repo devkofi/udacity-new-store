@@ -7,13 +7,13 @@ import { CartCountService } from '../services/cart-count.service';
   styleUrls: ['./checkout.component.css']
 })
 export class CheckoutComponent implements OnInit{
-  cartTotal:number = 0;
+  cartItems:number = 0;
   fullName: string = '';
   phoneNumber: string = '';
   payment: string = '';
   address: string = '';
   changing: boolean = false;
-  totalPrice: number = 0;
+  totalPrice: string = '';
 
   
   constructor(private cartCount: CartCountService){
@@ -21,10 +21,12 @@ export class CheckoutComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.cartTotal = this.cartCount.getCartCount()
+    let cost = 0
+    this.cartItems = this.cartCount.getCartCount()
     this.cartCount.getCart().forEach(item => {
-      this.totalPrice += item.price;
+      cost += item.price;
     });
+    this.totalPrice = cost.toFixed(2)
   }
 
   onSubmit():void{
@@ -34,6 +36,10 @@ export class CheckoutComponent implements OnInit{
   onChange(event: Event){
     console.log(event);
     this.changing = true;
+  }
+
+  getTotalCost():string{
+    return this.totalPrice;
   }
 
 

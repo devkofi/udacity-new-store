@@ -19,6 +19,15 @@
                     aria-label="Input">
                 </div>
 
+                <div *ngIf="individualFullName.invalid && individualFullName.dirty"  class="uk-text-danger">
+                    <div *ngIf="individualFullName.errors?.['required']">
+                      Please provide your Full Name.
+                    </div>
+                    <div *ngIf="individualFullName.errors?.['minlength']">
+                      Full Name should contain at least 6 characters.
+                    </div>
+                </div>
+
                 <div class="uk-margin">
                     <label class="uk-form-label" for="fullName">Phone Number</label>
                     <input 
@@ -33,8 +42,17 @@
                     aria-label="Input">
                 </div>
 
+                <div *ngIf="individualPhoneNumber.invalid && individualPhoneNumber.dirty"  class="uk-text-danger">
+                    <div *ngIf="individualPhoneNumber.errors?.['required']">
+                      Please provide your Phone Number.
+                    </div>
+                    <div *ngIf="individualPhoneNumber.errors?.['minlength']">
+                      Phone Number should contain at least 6 characters.
+                    </div>
+                </div>
+
                 <div class="uk-margin">
-                    <label class="uk-form-label" for="address">Full Name</label>
+                    <label class="uk-form-label" for="address">Address</label>
                     <input 
                     name="address"
                     id="address"
@@ -47,14 +65,61 @@
                     aria-label="Input">
                 </div>
 
+                <div *ngIf="individualAddress.invalid && individualAddress.dirty" class="uk-text-danger">
+                    <div *ngIf="individualAddress.errors?.['required']">
+                      <span>Please provide your Address.</span> 
+                    </div>
+                    <div *ngIf="individualAddress.errors?.['minlength']">
+                      Address should contain at least 6 characters.
+                    </div>
+                </div>
+
                 <div class="uk-width-1-4@s">
-                    <label class="uk-form-label" for="items">Items</label>
-                    <input id="items" name="items" [(ngModel)]="cartTotal" class="uk-input" type="number" placeholder="{{cartTotal | number}}" (ngModelChange)="onChange($event)">
+                    <label class="uk-form-label" for="cartTotal">Items</label>
+                    <input 
+                        id="cartItems" 
+                        name="cartItems"
+                        required  
+                        [(ngModel)]="cartItems"
+                        #individualCartItems="ngModel"
+                        min="0"
+                        class="uk-input" 
+                        type="number" 
+                        placeholder="{{cartItems | number}}" 
+                        (ngModelChange)="onChange($event)">
+                </div>
+
+                <div *ngIf="individualCartItems.invalid && individualCartItems.dirty" class="uk-text-danger">
+                    <div *ngIf="individualCartItems.errors?.['required']">
+                      <span>Please provide your Address.</span> 
+                    </div>
+                    <div *ngIf="individualCartItems.errors?.['min']">
+                      Value should not be less than 0.
+                    </div>
                 </div>
 
                 <div class="uk-width-1-4@s">
                     <label class="uk-form-label" for="price">Total Price</label>
-                    <input id="price" name="totalPrice" [(ngModel)]="totalPrice" class="uk-input" type="text" placeholder="{{totalPrice | currency}}" disabled>
+                    <input 
+                        id="price" 
+                        name="totalPrice"
+                        required 
+                        min="0" 
+                        [(ngModel)]="totalPrice"
+                        #individualTotalPrice="ngModel"
+                        class="uk-input" 
+                        type="text" 
+                        placeholder="{{getTotalCost() | currency}}" 
+                        disabled >
+                </div>
+
+                <div *ngIf="individualTotalPrice.invalid && individualTotalPrice.dirty" class="uk-text-danger">
+                    <div *ngIf="individualTotalPrice.errors?.['required']">
+                      <span>Please provide a value</span> 
+                    </div>
+                    <div *ngIf="individualTotalPrice.errors?.['min']">
+                      Value should not be less than 0.
+                    </div>
                 </div>
 
                 <div class="uk-margin">
@@ -63,6 +128,7 @@
                     name="payment"
                     id="payment"
                     required 
+                    min="0"
                     [(ngModel)]="payment"
                     #individualPayment="ngModel" 
                     class="uk-input" type="text" 
@@ -70,45 +136,28 @@
                     aria-label="Input">
                 </div>
 
+                <div *ngIf="individualPayment.invalid && individualPayment.dirty" class="uk-text-danger">
+                    <div *ngIf="individualPayment.errors?.['required']">
+                      <span>Please provide a value</span> 
+                    </div>
+                    <div *ngIf="individualPayment.errors?.['min']">
+                      Value should not be less than 0.
+                    </div>
+                </div>
+
                 <div class="uk-margin">
                     <!-- <button [disabled]="form.invalid || cartTotal < 1" class="uk-button uk-button-primary" uk-toggle="target: #modal-close-default" type="submit">Order</button> -->
-                    <button [disabled]="form.invalid || cartTotal < 1" class="uk-button uk-button-primary" type="submit"><a class="uk-link-reset" routerLink="/confirm">Order</a></button>
+                    <button [disabled]="form.invalid || cartItems < 1" class="uk-button uk-button-primary" type="submit"><a class="uk-link-reset" routerLink="/confirm">Order</a></button>
                 </div>
 
-                <div *ngIf="individualFullName.invalid && individualFullName.dirty">
-                    <div *ngIf="individualFullName.errors?.['required']">
-                      Please provide your Full Name.
-                    </div>
-                    <div *ngIf="individualFullName.errors?.['minlength']">
-                      Full Name should contain at least 6 characters.
-                    </div>
-                </div>
 
-                <div *ngIf="individualPhoneNumber.invalid && individualPhoneNumber.dirty">
-                    <div *ngIf="individualPhoneNumber.errors?.['required']">
-                      Please provide your Phone Number.
-                    </div>
-                    <div *ngIf="individualPhoneNumber.errors?.['minlength']">
-                      Phone Number should contain at least 6 characters.
-                    </div>
-                </div>
-
-                <div *ngIf="individualAddress.invalid && individualAddress.dirty">
-                    <div *ngIf="individualAddress.errors?.['required']">
-                      Please provide your Address.
-                    </div>
-                    <div *ngIf="individualAddress.errors?.['minlength']">
-                      Address should contain at least 6 characters.
-                    </div>
-                </div>
-
-                <div *ngIf="cartTotal <=0">
+                <div *ngIf="cartItems <=0" class="uk-text-danger">
                    Cart is empty.
                 </div>
 
                 <div *ngIf="changing">
-                    Cart is now {{cartTotal}} items
-                 </div>                     
+                    <span class="uk-text-primary">Cart is now {{cartItems}} items</span>  
+                </div>                     
         
             </fieldset>
         </form>
