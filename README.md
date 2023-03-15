@@ -7,6 +7,8 @@ This repo contains a basic E-commerce application that was built with the angula
 * Add product to the cart
 * Remove specific items you don't want from the cart
 * Notify the user upon successful completion of order
+* Clicking on MY STORE takes you to the product list page
+* CHECKOUT takes you to the checkout page to make payment
 <br/><br/>
 
 ---

@@ -4,7 +4,7 @@
         <img class="uk-align-center uk-align-left@m " src="{{cart.url}}" width="150" height="50" alt="Example image">
         <h2>{{cart.name}}</h2>
         <p>{{cart.description}}</p>
-        <button href="#" class="uk-button uk-button-danger" (click)="remove(cart)">Delete</button>
+        <button href="#" class="uk-button uk-button-danger" (click)="remove(cart)" (mouseup)="showAlert()">Delete</button>
         
     </div>
 </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { CartCountService } from '../cart-count.service';
+import { ShowalertService } from '../showalert.service';
 import { Product } from '../types';
 
 @Component({
@@ -10,7 +11,7 @@ import { Product } from '../types';
 export class CartlistComponent implements OnInit{
 
   carts: Product[];  
-  constructor(private cartService: CartCountService){
+  constructor(private cartService: CartCountService, private alertService: ShowalertService){
 
   }
 
@@ -24,4 +25,10 @@ export class CartlistComponent implements OnInit{
       this.carts.splice(index, 1);
     }
   }
+
+  showAlert():void{
+    this.alertService.showDeleteAlert();
+  }
+
+
 }

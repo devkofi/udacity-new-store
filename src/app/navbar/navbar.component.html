@@ -21,3 +21,18 @@
         </div>
     </div>
 </nav>
+
+<div>
+    <div *ngIf="getAlert() === true" class="uk-alert-success" uk-alert>
+        <a class="uk-alert-close" uk-close (click)="resetAlert()"></a>
+        <p>Added to cart successfully</p>
+    </div>
+</div>
+
+<div>
+    <div *ngIf="getDeleteAlert() === true" class="uk-alert-danger" uk-alert>
+        <a class="uk-alert-close" uk-close (click)="resetDeleteAlert()"></a>
+        <p>Removed Item Successfully</p>
+    </div>
+</div>
+

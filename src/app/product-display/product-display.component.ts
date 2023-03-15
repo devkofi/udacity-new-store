@@ -1,4 +1,5 @@
 import { Component, Input, Output, OnInit, EventEmitter  } from '@angular/core';
+import { ShowalertService } from '../showalert.service';
 import { Product } from '../types';
 
 @Component({
@@ -13,16 +14,17 @@ export class ProductDisplayComponent implements OnInit{
 
   @Output()addCurrentProduct = new EventEmitter()
 
-  contructor(){
+  constructor(private showAlertService: ShowalertService){
 
   }
 
   ngOnInit(): void {
-    
+
   }
 
-  shout(product: Product):void{
-    alert(product.name);
+  showAlert():void{
+    this.showAlertService.showAlert()
   }
+
 
 }
